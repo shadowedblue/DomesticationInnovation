@@ -105,10 +105,10 @@ public class RecallBallEntity extends Entity {
                     Entity entity = type.create(level);
                     if(entity instanceof LivingEntity alive){
                         alive.readAdditionalSaveData(this.getContainedData());
-                        alive.setHealth(Math.max(2, alive.getMaxHealth() * 0.25F));
                         alive.setYRot(random.nextFloat() * 360 - 180);
                         alive.copyPosition(this);
                         level.addFreshEntity(alive);
+                        alive.setHealth(Math.max(2, alive.getMaxHealth() * 0.25F));
                     }
                     this.entityData.set(FINISHED, true);
                     this.entityData.set(OPENED, false);
